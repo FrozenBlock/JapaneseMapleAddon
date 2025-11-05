@@ -1,0 +1,46 @@
+{
+  "type": "frozenlib:combo",
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "type": "minecraft:random_selector",
+          "config": {
+            "default": "wilderwild_japanese_maple:japanese_maple_bees_checked",
+            "features": [
+              {
+                "chance": 0.025,
+                "feature": "wilderwild_japanese_maple:japanese_maple_checked"
+              },
+              {
+                "chance": 0.3,
+                "feature": "wilderwild_japanese_maple:full_japanese_maple_checked"
+              },
+              {
+                "chance": 0.3785,
+                "feature": "wilderwild_japanese_maple:dying_japanese_maple_checked"
+              },
+              {
+                "chance": 0.37,
+                "feature": "wilderwild_japanese_maple:japanese_maple_bees_checked"
+              },
+              {
+                "chance": 0.45,
+                "feature": "wilderwild_japanese_maple:short_japanese_maple_checked"
+              },
+              {
+                "chance": 0.3,
+                "feature": "wilderwild_japanese_maple:big_shrub_japanese_maple_checked"
+              }
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": "wilderwild_japanese_maple:japanese_maple_leaf_litter",
+        "placement": []
+      }
+    ]
+  }
+}

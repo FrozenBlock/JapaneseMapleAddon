@@ -1,0 +1,17 @@
+{
+  "feature": "wilderwild_japanese_maple:tall_dying_japanese_maple",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "wilderwild_japanese_maple:japanese_maple_sapling",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
+    }
+  ]
+}

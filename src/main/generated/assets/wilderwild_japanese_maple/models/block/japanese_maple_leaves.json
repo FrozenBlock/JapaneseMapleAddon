@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "wilderwild_japanese_maple:block/japanese_maple_leaves"
+  }
+}

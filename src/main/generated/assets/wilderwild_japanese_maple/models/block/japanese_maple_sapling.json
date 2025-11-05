@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "wilderwild_japanese_maple:block/japanese_maple_sapling"
+  }
+}

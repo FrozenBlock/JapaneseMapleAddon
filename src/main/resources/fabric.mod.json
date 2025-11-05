@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "Japanese Maples - Wilder Wild",
+  "description": "Adds Japanese Maples to Wilder Wild.",
+  "authors": [
+    "Lunade"
+  ],
+  "contributors": [
+    "zhen",
+    "voxelotl",
+    "pictochats_",
+    "Lufurrius"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/wilder-wild",
+    "sources": "https://github.com/FrozenBlock/WilderWild",
+    "issues": "https://github.com/FrozenBlock/WilderWild/issues"
+  },
+  "license": "FrozenBlock Modding Oasis License v1.0",
+  "icon": "assets/wilderwild_japanese_maple/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.frozenblock.wilderwild_japanese_maple.WilderWildJapaneseMaple"
+    ],
+    "client": [
+      "net.frozenblock.wilderwild_japanese_maple.WilderWildJapaneseMapleClient"
+    ],
+    "fabric-datagen": [
+      "net.frozenblock.wilderwild_japanese_maple.datagen.WWJMDataGenerator"
+    ]
+  },
+  "accessWidener": "wilderwild_japanese_maple.accesswidener",
+  "depends": {
+    "wilderwild": "*",
+    "frozenlib": "${frozenlib_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=21"
+  },
+  "suggests": {
+    "cloth-config": "*",
+    "terrablender": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "X": "https://x.com/FB_Oasis",
+        "Bluesky": "https://bsky.app/profile/frozenblock.bsky.social",
+        "modmenu.discord": "https://discord.gg/frozenblock",
+        "modmenu.modrinth": "https://modrinth.com/organization/frozenblock",
+        "modmenu.youtube": "https://www.youtube.com/@frozenblockmoddingoasismod",
+        "modmenu.kofi": "https://ko-fi.com/frozenblock"
+      },
+      "badges": [
+        "frozenblock"
+      ]
+    },
+    "frozenlib_registry": {
+      "mod_protocol": $protocol_version
+    }
+  }
+}
