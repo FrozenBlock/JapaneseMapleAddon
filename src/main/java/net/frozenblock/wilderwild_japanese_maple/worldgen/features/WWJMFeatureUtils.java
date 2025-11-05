@@ -1,6 +1,6 @@
 /*
  * Copyright 2025 FrozenBlock
- * This file is part of Wilder Aquatic.
+ * This file is part of Japanese Maples - Wilder Wild.
  *
  * This program is free software; you can modify it under
  * the terms of version 1 of the FrozenBlock Modding Oasis License
