@@ -69,45 +69,14 @@ public final class WWJMBlocks {
 		throw new UnsupportedOperationException("WWJMBlocks contains only static declarations.");
 	}
 
-	private static void registerBlock(String path, Block block) {
-		actualRegisterBlock(path, block);
-	}
-
-	@SafeVarargs
-	private static void registerBlockBefore(ItemLike comparedItem, String path, Block block, ResourceKey<CreativeModeTab>... tabs) {
-		actualRegisterBlock(path, block);
-		registerBlockItemBefore(comparedItem, path, block, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, tabs);
-	}
-
 	@SafeVarargs
 	private static void registerBlockAfter(ItemLike comparedItem, String path, Block block, ResourceKey<CreativeModeTab>... tabs) {
-		actualRegisterBlock(path, block);
-		registerBlockItemAfter(comparedItem, path, block, tabs);
-	}
-
-	@SafeVarargs
-	private static void registerBlockItemBefore(ItemLike comparedItem, String name, Block block, ResourceKey<CreativeModeTab>... tabs) {
-		registerBlockItemBefore(comparedItem, name, block, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, tabs);
-	}
-
-	@SafeVarargs
-	private static void registerBlockItemBefore(ItemLike comparedItem, String path, Block block, CreativeModeTab.TabVisibility tabVisibility, ResourceKey<CreativeModeTab>... tabs) {
-		FrozenCreativeTabs.addBefore(comparedItem, block, tabVisibility, tabs);
 		actualRegisterBlockItem(path, block);
+		registerBlock(path, block);
+		FrozenCreativeTabs.addAfter(comparedItem, block, tabs);
 	}
 
-	@SafeVarargs
-	private static void registerBlockItemAfter(ItemLike comparedItem, String name, Block block, ResourceKey<CreativeModeTab>... tabs) {
-		registerBlockItemAfter(comparedItem, name, block, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, tabs);
-	}
-
-	@SafeVarargs
-	private static void registerBlockItemAfter(ItemLike comparedItem, String path, Block block, CreativeModeTab.TabVisibility visibility, ResourceKey<CreativeModeTab>... tabs) {
-		actualRegisterBlockItem(path, block);
-		FrozenCreativeTabs.addAfter(comparedItem, block, visibility, tabs);
-	}
-
-	private static void actualRegisterBlock(String path, Block block) {
+	private static void registerBlock(String path, Block block) {
 		if (BuiltInRegistries.BLOCK.getOptional(WWJMConstants.id(path)).isPresent()) return;
 		Registry.register(BuiltInRegistries.BLOCK, WWJMConstants.id(path), block);
 	}

@@ -34,22 +34,20 @@ public final class WWJMWorldgen {
 
 	public static void generate() {
 		BiomeModifications.create(WWJMConstants.id("japanese_maple_generation"))
-			.add(ModificationPhase.ADDITIONS,
-				BiomeSelectors.all(),
-				(biomeSelectionContext, context) -> {
-					final BiomeModificationContext.GenerationSettingsContext generationSettings = context.getGenerationSettings();
+			.add(ModificationPhase.ADDITIONS, BiomeSelectors.all(), (biomeSelectionContext, context) -> {
+				final BiomeModificationContext.GenerationSettingsContext generationSettings = context.getGenerationSettings();
 
-					if (biomeSelectionContext.hasTag(WWJMBiomeTags.HAS_JAPANESE_MAPLE)) {
-						generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WWJMPlaced.JAPANESE_MAPLE_TREES.getKey());
-					}
+				if (biomeSelectionContext.hasTag(WWJMBiomeTags.HAS_JAPANESE_MAPLE)) {
+					generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WWJMPlaced.JAPANESE_MAPLE_TREES.getKey());
+				}
 
-					if (biomeSelectionContext.hasTag(WWJMBiomeTags.HAS_JAPANESE_MAPLE_SPARSE)) {
-						generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WWJMPlaced.JAPANESE_MAPLE_TREES_SPARSE.getKey());
-					}
+				if (biomeSelectionContext.hasTag(WWJMBiomeTags.HAS_JAPANESE_MAPLE_SPARSE)) {
+					generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WWJMPlaced.JAPANESE_MAPLE_TREES_SPARSE.getKey());
+				}
 
-					if (biomeSelectionContext.hasTag(WWJMBiomeTags.HAS_JAPANESE_MAPLE_SHORTER_SPARSE)) {
-						generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WWJMPlaced.JAPANESE_MAPLE_TREES_SHORTER_SPARSE.getKey());
-					}
+				if (biomeSelectionContext.hasTag(WWJMBiomeTags.HAS_JAPANESE_MAPLE_SHORTER_SPARSE)) {
+					generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WWJMPlaced.JAPANESE_MAPLE_TREES_SHORTER_SPARSE.getKey());
+				}
 			});
 	}
 

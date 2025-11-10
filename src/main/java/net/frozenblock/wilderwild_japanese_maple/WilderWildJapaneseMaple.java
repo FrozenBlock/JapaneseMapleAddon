@@ -19,10 +19,7 @@ package net.frozenblock.wilderwild_japanese_maple;
 
 import net.fabricmc.loader.api.ModContainer;
 import net.frozenblock.lib.entrypoint.api.FrozenModInitializer;
-import net.frozenblock.wilderwild_japanese_maple.registry.WWJMBlocks;
-import net.frozenblock.wilderwild_japanese_maple.registry.WWJMParticleTypes;
-import net.frozenblock.wilderwild_japanese_maple.registry.WWJMVillagers;
-import net.frozenblock.wilderwild_japanese_maple.worldgen.modification.WWJMWorldgen;
+import net.frozenblock.wilderwild_japanese_maple.mod_compat.WWJMModIntegrations;
 
 public final class WilderWildJapaneseMaple extends FrozenModInitializer {
 
@@ -32,10 +29,7 @@ public final class WilderWildJapaneseMaple extends FrozenModInitializer {
 
 	@Override
 	public void onInitialize(String modId, ModContainer container) {
-		WWJMBlocks.registerBlocks();
-		WWJMParticleTypes.registerParticles();
-		WWJMVillagers.register();
-		WWJMWorldgen.generate();
+		WWJMModIntegrations.init();
 	}
 
 }

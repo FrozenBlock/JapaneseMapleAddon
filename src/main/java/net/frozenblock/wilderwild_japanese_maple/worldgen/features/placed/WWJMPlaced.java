@@ -105,7 +105,7 @@ public final class WWJMPlaced {
 		);
 
 		JAPANESE_MAPLE_TREES_SPARSE.makeAndSetHolder(WWJMConfigured.JAPANESE_MAPLES.getHolder(),
-			RarityFilter.onAverageOnceEvery(13),
+			RarityFilter.onAverageOnceEvery(16),
 			InSquarePlacement.spread(),
 			TREE_THRESHOLD,
 			PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
@@ -115,7 +115,7 @@ public final class WWJMPlaced {
 		);
 
 		JAPANESE_MAPLE_TREES_SHORTER_SPARSE.makeAndSetHolder(WWJMConfigured.JAPANESE_MAPLES_SHORTER.getHolder(),
-			RarityFilter.onAverageOnceEvery(13),
+			RarityFilter.onAverageOnceEvery(16),
 			InSquarePlacement.spread(),
 			TREE_THRESHOLD,
 			PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
