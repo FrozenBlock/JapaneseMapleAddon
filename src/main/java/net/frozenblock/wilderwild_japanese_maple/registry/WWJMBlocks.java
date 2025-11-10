@@ -75,20 +75,25 @@ public final class WWJMBlocks {
 
 	@SafeVarargs
 	private static void registerBlockBefore(ItemLike comparedItem, String path, Block block, ResourceKey<CreativeModeTab>... tabs) {
-		registerBlockItemBefore(comparedItem, path, block, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, tabs);
 		actualRegisterBlock(path, block);
+		registerBlockItemBefore(comparedItem, path, block, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, tabs);
 	}
 
 	@SafeVarargs
 	private static void registerBlockAfter(ItemLike comparedItem, String path, Block block, ResourceKey<CreativeModeTab>... tabs) {
-		registerBlockItemAfter(comparedItem, path, block, tabs);
 		actualRegisterBlock(path, block);
+		registerBlockItemAfter(comparedItem, path, block, tabs);
+	}
+
+	@SafeVarargs
+	private static void registerBlockItemBefore(ItemLike comparedItem, String name, Block block, ResourceKey<CreativeModeTab>... tabs) {
+		registerBlockItemBefore(comparedItem, name, block, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, tabs);
 	}
 
 	@SafeVarargs
 	private static void registerBlockItemBefore(ItemLike comparedItem, String path, Block block, CreativeModeTab.TabVisibility tabVisibility, ResourceKey<CreativeModeTab>... tabs) {
-		actualRegisterBlockItem(path, block);
 		FrozenCreativeTabs.addBefore(comparedItem, block, tabVisibility, tabs);
+		actualRegisterBlockItem(path, block);
 	}
 
 	@SafeVarargs
@@ -103,17 +108,13 @@ public final class WWJMBlocks {
 	}
 
 	private static void actualRegisterBlock(String path, Block block) {
-		if (BuiltInRegistries.BLOCK.getOptional(WWJMConstants.id(path)).isEmpty()) Registry.register(BuiltInRegistries.BLOCK, WWJMConstants.id(path), block);
+		if (BuiltInRegistries.BLOCK.getOptional(WWJMConstants.id(path)).isPresent()) return;
+		Registry.register(BuiltInRegistries.BLOCK, WWJMConstants.id(path), block);
 	}
 
 	private static void actualRegisterBlockItem(String path, Block block) {
-		if (BuiltInRegistries.ITEM.getOptional(WWJMConstants.id(path)).isEmpty()) {
-			Registry.register(
-				BuiltInRegistries.ITEM,
-				WWJMConstants.id(path),
-				new BlockItem(block, new Item.Properties())
-			);
-		}
+		if (BuiltInRegistries.ITEM.getOptional(WWJMConstants.id(path)).isPresent()) return;
+		Registry.register(BuiltInRegistries.ITEM, WWJMConstants.id(path), new BlockItem(block, new Item.Properties()));
 	}
 
 	public static void registerBlocks() {
